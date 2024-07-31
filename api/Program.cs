@@ -23,18 +23,9 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast");
 
-var get_version = () => typeof(WeatherForecast).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
-
-app.MapGet("/healthz", () =>
-{
-    return $"Healthy\n{get_version()}";
-});
-
-app.MapGet("/version", get_version);
-
 app.MapFallback(() =>
 {
-    return $"Version: {get_version()}";
+    return $"Welcome to your web api application, please try getting weather info here: <a href='/weatherforecast'>/weatherforecast</a>";
 });
 
 app.Run();
