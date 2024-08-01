@@ -6,3 +6,8 @@ services:
       # target: runner
     ports:
       - "8080:80"
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydb
