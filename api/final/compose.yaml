@@ -1,8 +1,8 @@
 services:
   api:
-    image: weshigbee/api:latest
+    image: api
     build:
       context: .
-      target: runner
+      # target: runner
     ports:
       - 8080:80
