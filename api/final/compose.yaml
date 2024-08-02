@@ -1,11 +1,11 @@
 services:
   api:
     image: api
+    ports:
+      - "8080:80"
     build:
       context: .
       # target: runner
-    ports:
-      - "8080:80"
   db:
     image: mysql
     environment:
